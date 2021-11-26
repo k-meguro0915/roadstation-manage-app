@@ -92,21 +92,23 @@
 			<!-- URLリンクリスト -->
 			<div class="facility-list">
 				<ul style="list-style:none;">
+					<?php for($i=1;$i<=10;$i++) {?>
 					<li>
 						<label>
 							<input
-								id="facility-checkbox-01"	style="display:none"
+								id="facility-checkbox-<?php print('0' . $i)?>"	style="display:none"
 								type="checkbox"	class="btn-check custom-control-input"
 								id="customCheck1"	autocomplete="off" checked=""
 							>
 							<span
-								id="facility-btn-01" class="btn btn-secondary"
-								for="customCheck1" onclick="clickChangeButtonState('01')"
+								id="facility-btn-<?php print('0' . $i)?>" class="btn btn-secondary"
+								for="customCheck1" onclick="clickChangeButtonState('<?php print('0' . $i)?>')"
 							>
 								売店
 							</span>
 						</label>
 					</li>
+					<?php } ?>
 				</ul>
 			</div>
 			<!-- 基本情報アコーディオン -->
@@ -118,17 +120,17 @@
 								<button
 									class="btn btn-link"
 									type="button"
-									data-toggle="collapse"
-									data-target="#basic-information"
+									data-bs-toggle="collapse"
+									data-bs-target="#information-accordion"
 									aria-expanded="true"
-									aria-controls="basic-information"
+									aria-controls="information-accordion"
 								>
 									▼基本情報（クリック・タップで開く）
 								</button>
 							</h5>
 						</div>
 						<div 
-							id="basic-information" 
+							id="information-accordion" 
 							class="collapse" 
 							aria-labelledby="basic-information-header" 
 							data-parent="#accordionExample"

@@ -10,8 +10,8 @@
               id="facility-title"
               class="btn btn-link"
               type="button"
-              data-toggle="collapse"
-              data-target="#collapseOne"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
               aria-expanded="true"
               aria-controls="collapseOne"
             >
