@@ -31,7 +31,7 @@
 				<label for="formGroupExampleInput2">紹介文</label>
 				<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 			</div>
-			<div class="location-roads my-3">
+			<div class="location-roads mb-5">
 				<div class="form-group">
 					<select class="custom-select">
 						<label for="formGroupExampleInput2">立地道路種別</label>
@@ -63,7 +63,8 @@
 				</div>
 			</div>
 			<!-- 旬のイベント情報 -->
-			<div class="events my-3">
+			<div class="events mb-5">
+				<h3 class="text-center mb-2"><u>開催中のイベント</u></h3>
 				<div class="form-group">
 					<label for="formGroupExampleInput">イベントタイトル</label>
 					<input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
@@ -89,22 +90,46 @@
 					<label class="form-check-label" for="inlineCheckbox2">閉鎖</label>
 				</div>
 			</div>
-			<!-- URLリンクリスト -->
-			<div class="facility-list">
-				<ul style="list-style:none;">
+			<!-- 施設一覧 -->
+			<div class="mb-5 facility-list d-flex flex-column align-items-center">
+				<h3 class="text-center mb-5"><u>施設一覧</u></h3>
+				<ul class="" style="list-style:none;">
 					<?php for($i=1;$i<=10;$i++) {?>
-					<li>
+					<li class="ml-3 d-inline">
 						<label>
 							<input
 								id="facility-checkbox-<?php print('0' . $i)?>"	style="display:none"
 								type="checkbox"	class="btn-check custom-control-input"
-								id="customCheck1"	autocomplete="off" checked=""
+								id="customCheck<?php print('0' . $i)?>"	autocomplete="off" checked=""
 							>
 							<span
 								id="facility-btn-<?php print('0' . $i)?>" class="btn btn-secondary"
-								for="customCheck1" onclick="clickChangeButtonState('<?php print('0' . $i)?>')"
+								for="customCheck<?php print('0' . $i)?>" onclick="clickChangeButtonState('<?php print('0' . $i)?>')"
 							>
 								売店
+							</span>
+						</label>
+					</li>
+					<?php } ?>
+				</ul>
+			</div>
+			<!-- 施設一覧 -->
+			<div class="mb-5 facility-list d-flex flex-column align-items-center">
+				<h3 class="text-center mb-5"><u>サービス一覧</u></h3>
+				<ul class="" style="list-style:none;">
+					<?php for($i=1;$i<=10;$i++) {?>
+					<li class="ml-3 d-inline">
+						<label>
+							<input
+								id="service-checkbox-<?php print('0' . $i)?>"	style="display:none"
+								type="checkbox"	class="btn-check custom-control-input"
+								id="customCheck<?php print('0' . $i)?>"	autocomplete="off" checked=""
+							>
+							<span
+								id="service-btn-<?php print('0' . $i)?>" class="btn btn-secondary"
+								for="customCheck<?php print('0' . $i)?>" onclick=""
+							>
+								スタンプ
 							</span>
 						</label>
 					</li>

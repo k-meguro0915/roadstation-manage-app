@@ -2064,6 +2064,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./main */ "./resources/js/main.js");
 
+__webpack_require__(/*! ./head */ "./resources/js/head.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.bundle.min.js":
@@ -5362,6 +5364,28 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/head.js":
+/*!******************************!*\
+  !*** ./resources/js/head.js ***!
+  \******************************/
+/***/ (() => {
+
+// ヘッダー構成部分におけるjavasctriptの挙動
+function activateNavBar() {
+  var uri = location.pathname;
+  uri = uri.substring(1);
+  var id;
+  id = uri ? '#' + uri : '#route';
+  document.querySelector(id).classList.add("active");
+} // main
+
+
+window.onload = function () {
+  activateNavBar();
+};
+
+/***/ }),
+
 /***/ "./resources/js/main.js":
 /*!******************************!*\
   !*** ./resources/js/main.js ***!
@@ -5390,6 +5414,8 @@ window.showFacilitiesCard = function (id) {
   var template = document.getElementById('tmp-facility-accordion');
   var firstClone = template.content.cloneNode(true);
   firstClone.getElementById("facility-title").textContent = "▼売店(クリック・タップで開く)";
+  firstClone.getElementById("facility-title").setAttribute('data-bs-target', '#Collaps-' + id);
+  firstClone.getElementById("collapseOne").id = "Collaps-" + id;
   firstClone.getElementById("facility-accordion").id = "facility-accordion-" + id;
   document.getElementById('facility-list').appendChild(firstClone);
   var card = document.getElementById('facility-accordion');
@@ -22627,6 +22653,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/css/app.css":
+/*!*******************************!*\
+  !*** ./resources/css/app.css ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./node_modules/process/browser.js":
 /*!*****************************************!*\
   !*** ./node_modules/process/browser.js ***!
@@ -22943,6 +22982,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
+/******/ 			"css/app": 0,
 /******/ 			"css/custom": 0
 /******/ 		};
 /******/ 		
@@ -22993,8 +23033,9 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/custom"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/custom"], () => (__webpack_require__("./resources/scss/custom.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/custom"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/custom"], () => (__webpack_require__("./resources/scss/custom.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/custom"], () => (__webpack_require__("./resources/css/app.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

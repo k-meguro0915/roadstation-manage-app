@@ -7,20 +7,16 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li id="route" class="nav-item">
         <a class="nav-link" href="/">道の駅一覧 <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
+      <li id="create_roadstation" class="nav-item">
         <a class="nav-link" href="/create_roadstation">道の駅新規登録</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">CSV取り込み</a>
+      <li id="import_csv" class="nav-item">
+        <a class="nav-link" href="/import_csv">CSV取り込み</a>
       </li>
     </ul>
-    <!-- <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form> -->
   </div>
 </nav>
 @endsection

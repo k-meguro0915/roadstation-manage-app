@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/create_roadstation', function () {
     return view('createRoadStation');
 });
+
+Route::get('/import_csv', function () {
+    return view('importCsv');
+});

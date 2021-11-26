@@ -18,6 +18,8 @@ window.showFacilitiesCard = function(id){
   const template = document.getElementById('tmp-facility-accordion');
   const firstClone = template.content.cloneNode(true);
   firstClone.getElementById("facility-title").textContent="▼売店(クリック・タップで開く)";
+  firstClone.getElementById("facility-title").setAttribute('data-bs-target','#Collaps-' + id);
+  firstClone.getElementById("collapseOne").id = "Collaps-" + id;
   firstClone.getElementById("facility-accordion").id = "facility-accordion-" + id;
 
   document.getElementById('facility-list').appendChild(firstClone);
