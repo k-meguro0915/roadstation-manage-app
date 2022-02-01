@@ -7,31 +7,24 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th scope="col">#</th>
-					<th scope="col">First</th>
-					<th scope="col">Last</th>
-					<th scope="col">Handle</th>
+					<th scope="col">CID</th>
+					<th scope="col">道の駅 名称</th>
+					<th scope="col">登録年</th>
+					<th scope="col">編集/削除</th>
 				</tr>
 			</thead>
 			<tbody>
+				<?php foreach($road_station as $key => $value){ ?>
 				<tr>
-					<th scope="row">1</th>
-					<td>Mark</td>
-					<td>Otto</td>
-					<td>@mdo</td>
+					<td>{{ $value->CID }}</td>
+					<td>{{ $value->name }}</td>
+					<td>{{ $value->registry_year }}</td>
+					<td>
+						<a href="/edit_roadstation/{{$value->CID}}" class="btn btn-primary">編集</a>
+						<a href="/delete_roadstation/{{$value->CID}}" class="btn btn-danger">削除</a>
+					</td>
 				</tr>
-				<tr>
-					<th scope="row">2</th>
-					<td>Jacob</td>
-					<td>Thornton</td>
-					<td>@fat</td>
-				</tr>
-				<tr>
-					<th scope="row">3</th>
-					<td>Neal</td>
-					<td>Larry the Bird</td>
-					<td>@twitter</td>
-				</tr>
+				<?php } ?>
 			</tbody>
 		</table>
 		<nav aria-label="Page navigation example">
